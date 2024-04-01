@@ -1,0 +1,27 @@
+:root {
+    --background-light: #ffffffff;
+    --background-medium: #e2e2e2;
+    --background-dark: #b0b0b0;
+
+    --text-dark: #282828;
+    --text-medium: #535353;
+    --text-light: #ffffff;
+
+    --color-primary: #578cd6;
+    --color-primary-dark: #3c67a3;
+    --color-secondary: #d53d72;
+
+    --color-error: #fa0000ff;
+    --color-success: #66eb00ff;
+    --global-semantic-warning: #ffa800ff;
+}
+
+:root.dark-theme {
+    --text-dark: #ffffffff;
+    --text-medium: #e2e2e2;
+    --text-dark: #b0b0b0;
+
+    --background-light: #282828;
+    --background-medium: #535353;
+    --background-dark: #919191;
+}

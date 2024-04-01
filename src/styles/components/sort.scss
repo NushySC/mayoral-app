@@ -1,0 +1,12 @@
+.sort {
+    appearance: auto;
+    align-items: center;
+    padding-inline: var(--content-spacing-m);
+    cursor: default;
+    height: 40px;
+    white-space: pre;
+    border: 1px solid var(--background-medium);
+    border-image: initial;
+    border-radius: 8px;
+    width: 250px;
+}

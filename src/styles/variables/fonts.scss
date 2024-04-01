@@ -1,0 +1,47 @@
+@use './breakpoint.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --font-size-body-xl: 1.875rem;
+    --font-size-body-l: 1.3125rem;
+    --font-size-body-m: 1.125rem;
+    --font-size-body-s: 0.9375rem;
+    --font-size-body-xs: 0.75rem;
+
+    // font-weight
+    --font-weight-body-xl: 200;
+    --font-weight-body-l: 200;
+    --font-weight-body-m: 300;
+    --font-weight-body-s: 400;
+
+    // line-height
+    --line-height-heading-1: 3rem;
+    --line-height-heading-2: 2.8125rem;
+    --line-height-heading-3: 2.4375rem;
+
+    @media (min-width: $lg) {
+        --font-size-body-xl: 1.875rem;
+        --font-size-body-l: 1.3125rem;
+        --font-size-body-m: 1.125rem;
+        --font-size-body-s: 0.9375rem;
+        --font-size-body-xs: 0.75rem;
+
+        // font-weight
+        --font-weight-body-xl: 200;
+        --font-weight-body-l: 200;
+        --font-weight-body-m: 300;
+        --font-weight-body-s: 400;
+
+        // line-height
+        --line-height-heading-1: 3rem;
+        --line-height-heading-2: 2.8125rem;
+        --line-height-heading-3: 2.4375rem;
+    }
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+}

@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ProductList from './components/ProductList';
+import Search from './components/Search';
+import { ReactComponent as CloseIcon } from './img/close.svg';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+    const [searchQuery, setSearchQuery] = useState<string>('');
+    const [sortQuery, setSortQuery] = useState<string>('');
+
+    const handleSearch = (query: string) => {
+        setSearchQuery(query);
+    };
+
+    const handleSortChange = (sortQuery: string) => {
+        setSortQuery(sortQuery);
+    };
+    const clearQuery = () => {
+        setSearchQuery('');
+    };
+
+    return (
+        <div className="app">
+            <Search onSearch={handleSearch} onSortChange={handleSortChange} />
+            {searchQuery && (
+                <div className="results">
+                    <p dangerouslySetInnerHTML={{
+                            __html: `Your search on <span> ${searchQuery} </span> has provided " " results`,
+                        }}></p>
+                    <button className="results__clear" onClick={clearQuery}>
+                        Clear Search
+                        <CloseIcon className='results__icon' />
+                    </button>
+                </div>
+            )}
+            <ProductList searchQuery={searchQuery} sortQuery={sortQuery} />
+        </div>
+    );
+};
 
 export default App;

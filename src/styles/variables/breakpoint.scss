@@ -1,0 +1,74 @@
+// Fix fo Zooming Squishes
+// https://css-tricks.com/zooming-squishes/
+// https://zellwk.com/blog/media-query-units/
+
+$sm: 320px; // $screen-sm-min; // 320px
+$md: 720px; // $screen-sm-min; // 720px
+$lg: 1440px; // $screen-md-min; // 1440px
+$xl: 1920px; // $screen-lg; // 1920px
+
+$breakpoints: (
+    'sm': $sm,
+    'md': $md,
+    'lg': $lg,
+    'xl': $xl,
+);
+$breakpoints-count: length($breakpoints); /* stylelint-disable-line */
+
+// ------------------------------------------------------------------------- //
+// Example:
+// @include breakpoint(sm) {
+//   width: 100%;
+// }
+// ------------------------------------------------------------------------- //
+
+/* stylelint-disable */
+
+@mixin breakpoint($media) {
+    @if $media == sm {
+        @media (min-width: $sm) {
+            @content;
+        }
+    } @else if $media == sm--max {
+        @media (max-width: ($sm - 1)) {
+            @content;
+        }
+    } @else if $media == sm--in {
+        @media (min-width: $sm) and (max-width: ($md - 1)) {
+            @content;
+        }
+    } @else if $media == md {
+        @media (min-width: $md) {
+            @content;
+        }
+    } @else if $media == md--max {
+        @media (max-width: ($md - 1)) {
+            @content;
+        }
+    } @else if $media == md--in {
+        @media (min-width: $md) and (max-width: ($lg - 1)) {
+            @content;
+        }
+    } @else if $media == lg {
+        @media (min-width: $lg) {
+            @content;
+        }
+    } @else if $media == lg--max {
+        @media (max-width: ($lg - 1)) {
+            @content;
+        }
+    } @else if $media == xl {
+        @media (min-width: $xl) {
+            @content;
+        }
+    } @else if $media == xl--max {
+        @media (max-width: ($xl - 1)) {
+            @content;
+        }
+    } @else {
+        @media (min-width: $media) {
+            @content;
+        }
+    }
+}
+/* stylelint-enable */

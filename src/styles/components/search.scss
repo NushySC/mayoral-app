@@ -1,0 +1,26 @@
+.search {
+    &__input {
+        border: 1px solid var(--background-medium);
+        color: var(--text-dark);
+        padding-left: calc(var(--content-spacing-xl) + var(--content-spacing-m));
+        width: 250px;
+        height: 40px;
+        border-radius: 8px 0 0 8px;
+    }
+    &__icon {
+        color: var(--text-dark);
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 32px;
+        top: 38px;
+        transform: translateY(-50%);
+    }
+    &__btn {
+        background-color: var(--color-primary);
+        color: var(--text-light);
+        height: 40px;
+        padding: 0 var(--content-spacing-l);
+        border-radius: 0 8px 8px 0;
+    }
+}
