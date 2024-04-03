@@ -1,14 +1,18 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import { productData } from '../productData';
+
+interface Product {
+    name: string;
+    price: number;
+}
 
 interface Props {
+    products: Product[];
     searchQuery: string;
     sortQuery: string;
 }
 
-const ProductList: React.FC<Props> = ({ searchQuery, sortQuery }) => {
-    const { products } = productData;
+const ProductList: React.FC<Props> = ({ products, searchQuery, sortQuery }) => {
     const filteredProducts = products.filter((product) =>
         product.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
